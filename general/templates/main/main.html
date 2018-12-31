@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'imgs/hookah.ico' %}">
+</head>
+<body>
+<div class="wrapper">
+    <section id="header">
+        {% include 'main/head.html' %}
+    </section>
+    <section id="content row" class="container">
+        {% block content %}{% endblock %}
+    </section>
+</div>
+
+{% include 'main/foot.html' %}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
